@@ -59,7 +59,8 @@ namespace Calculator.Services
             {
                 FirstNumber = firstNumber,
                 SecondNumber = secondNumber,
-                Sign = sign
+                Sign = sign,
+                Result = result
             });
 
             return result;
