@@ -14,7 +14,7 @@ namespace Calculator.Services
         
         public CalculatorService(CalculatorDbContext dbContext) : base(dbContext)
         {
-
+            
         }
         public List<History> GetHistory()
         {

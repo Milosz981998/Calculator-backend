@@ -23,17 +23,23 @@ namespace Calculator
             Configuration = configuration;
         }
 
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
             services.AddDbContext<CalculatorDbContext>(
                options => options.UseSqlServer(Configuration.GetConnectionString("CalculatorDatabase")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICalculatorService, CalculatorService>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,8 +49,7 @@ namespace Calculator
             {
                 app.UseDeveloperExceptionPage();
             }
-
-
+            
 
             app.UseHttpsRedirection();
 

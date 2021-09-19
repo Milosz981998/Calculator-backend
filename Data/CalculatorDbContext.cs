@@ -18,7 +18,13 @@ namespace Calculator.Data
         {
             base.OnConfiguring(optionsBuilder);
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<History>();
 
+
+        }
         public DbSet<History> History { get; set; }
     }
 }
