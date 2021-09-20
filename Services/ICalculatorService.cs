@@ -10,6 +10,6 @@ namespace Calculator.Services
     public interface ICalculatorService
     {
         List<History> GetHistory();
-        float SetResult(CalculatorCreate calculatorCreateDto);
+        decimal SetResult(CalculatorCreate calculatorCreateDto);
     }
 }

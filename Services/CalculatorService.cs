@@ -21,15 +21,15 @@ namespace Calculator.Services
             return _calculatorDbContext.History.ToList();
         }
 
-        private float Add(float firstNumber,float secondNumber)
+        private decimal Add(decimal firstNumber, decimal secondNumber)
         {
             return firstNumber + secondNumber;
         }  
-        private float Subtract(float firstNumber,float secondNumber)
+        private decimal Subtract(decimal firstNumber, decimal secondNumber)
         {
             return firstNumber - secondNumber;
         }   
-        private float Divide(float firstNumber,float secondNumber)
+        private decimal Divide(decimal firstNumber, decimal secondNumber)
         {
             if(secondNumber == 0)
             {
@@ -37,16 +37,16 @@ namespace Calculator.Services
             }
             return firstNumber / secondNumber;
         }
-        private float Multiply(float firstNumber,float secondNumber)
+        private decimal Multiply(decimal firstNumber, decimal secondNumber)
         {
             return firstNumber * secondNumber;
         }
 
-        public float SetResult(CalculatorCreate calculatorCreateDto)
+        public decimal SetResult(CalculatorCreate calculatorCreateDto)
         {
             string sign = calculatorCreateDto.Sign;
-            float firstNumber = calculatorCreateDto.FirstNumber;
-            float secondNumber = calculatorCreateDto.SecondNumber;
+            decimal firstNumber = calculatorCreateDto.FirstNumber;
+            decimal secondNumber = calculatorCreateDto.SecondNumber;
             var result = sign switch
             {
                 "+" => Add(firstNumber,secondNumber),

@@ -7,8 +7,8 @@ namespace Calculator.Models
 {
     public class CalculatorCreate
     {
-        public float FirstNumber { get; set; }
+        public decimal FirstNumber { get; set; }
         public string Sign { get; set; }
-        public float SecondNumber { get; set; }
+        public decimal SecondNumber { get; set; }
     }
 }

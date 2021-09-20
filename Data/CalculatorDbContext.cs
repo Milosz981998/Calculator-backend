@@ -21,6 +21,9 @@ namespace Calculator.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<History>().Property(e => e.FirstNumber).HasPrecision(28, 20);
+            modelBuilder.Entity<History>().Property(e => e.SecondNumber).HasPrecision(28, 20);
+            modelBuilder.Entity<History>().Property(e => e.Result).HasPrecision(28, 20);
             modelBuilder.Entity<History>();
 
 

@@ -10,13 +10,13 @@ namespace Calculator.Dtos
     public class CalculatorCreateDto
     {
         [Required]
-        [Range(float.MinValue,float.MaxValue)]
-        public float? FirstNumber { get; set; }
+        [Range((double)decimal.MinValue, (double)decimal.MaxValue)]
+        public decimal? FirstNumber { get; set; }
         [Required]
         [AssertThat("Sign == '+' || Sign == '-' || Sign == '/' || Sign == '*'",ErrorMessage = "Available signs is +,-,/,*")]
         public string Sign { get; set; }
         [Required]
-        [Range(float.MinValue, float.MaxValue)]
-        public float? SecondNumber { get; set; }
+        [Range((double)decimal.MinValue, (double)decimal.MaxValue)]
+        public decimal? SecondNumber { get; set; }
     }
 }

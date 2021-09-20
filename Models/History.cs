@@ -8,10 +8,10 @@ namespace Calculator.Models
     public class History
     {
         public long Id { get; set; }
-        public double FirstNumber { get; set; }
+        public decimal FirstNumber { get; set; }
         public string Sign { get; set; }
-        public double SecondNumber { get; set; }
-        public double Result { get; set; }
+        public decimal SecondNumber { get; set; }
+        public decimal Result { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
