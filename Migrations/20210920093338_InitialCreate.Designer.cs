@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Calculator.Migrations
 {
     [DbContext(typeof(CalculatorDbContext))]
-    [Migration("20210918172346_InitialCreate")]
+    [Migration("20210920093338_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,14 +31,17 @@ namespace Calculator.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("FirstNumber")
-                        .HasColumnType("float");
+                    b.Property<decimal>("FirstNumber")
+                        .HasPrecision(28, 20)
+                        .HasColumnType("decimal(28,20)");
 
-                    b.Property<double>("Result")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Result")
+                        .HasPrecision(28, 20)
+                        .HasColumnType("decimal(28,20)");
 
-                    b.Property<double>("SecondNumber")
-                        .HasColumnType("float");
+                    b.Property<decimal>("SecondNumber")
+                        .HasPrecision(28, 20)
+                        .HasColumnType("decimal(28,20)");
 
                     b.Property<string>("Sign")
                         .HasColumnType("nvarchar(max)");
